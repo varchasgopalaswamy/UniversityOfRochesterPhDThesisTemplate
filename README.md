@@ -1,2 +1,2 @@
-# UniversityOfRochesterPhDThesisTemplate
-A LaTeX template for a PhD thesis at the University of Rochester
+# University Of Rochester PhD Thesis Template
+A LaTeX template for a PhD thesis at the University of Rochester. This project is not affiliated in any way with the University of Rochester. This template was used to successfuly submit a thesis in 2021, but may not be valid in the future (and I highly doubt I'll ever have to submit another one!). Please feel free to open a PR with any modifications to keep this up to date! 
