@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document type, global settings, and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{report}   %12 point font for Times New Roman
+
+\input{preamble.tex}
+
+\begin{document}
+\doublespacing  %set line spacing
+
+%\ttfamily
+\pagenumbering{roman}
+\pagestyle{fancy}
+\input{titlePage.tex}
+\setcounter{page}{2} % set the page number appropriately based on the number of intro pages
+
+%\input{dedication.tex}
+
+\input{TOC.tex}
+
+% \frenchspacing
+% \setlength{\RaggedRightRightskip}{0pt plus 4em}
+
+\input{vita.tex}
+
+\input{CV.tex}
+
+\input{acknowledgements.tex}
+
+\input{summary.tex}
+
+\input{funding.tex}
+%\currentpdfbookmark{Contributors and Funding Sources}{funding}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% List of figures and tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addcontentsline{toc}{chapter}{List of Tables}
+\begin{singlespace}
+	\setlength\cftbeforetabskip{\baselineskip}  %manually set spacing between entries
+	\listoftables
+\end{singlespace}
+
+\clearpage
+
+\addcontentsline{toc}{chapter}{List of Figures}
+\begin{singlespace}
+\setlength\cftbeforefigskip{\baselineskip}  %manually set spacing between entries
+\listoffigures
+\end{singlespace}
+
+% resume page numbering for rest of document
+\clearpage
+
+\addcontentsline{toc}{chapter}{List of Symbols}
+\begin{singlespace}
+\setlength\cftbeforefigskip{\baselineskip}  %manually set spacing between entries
+\input{definitions}
+\end{singlespace}
+
+% resume page numbering for rest of document
+\clearpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1} % set the page number appropriately
+
+% Adjust chapter title formatting
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\filcenter}{\MakeUppercase\chaptertitlename\ \thechapter}{0pt}{\MakeUppercase{#1}}  %spacing between titles
+\titlespacing*{\chapter}
+  {0pt}{0pt}{30pt}	%controls vertical margins on title
+
+% Adjust section title formatting
+\titleformat{\section}{\bfseries}{\thesection}{1em}{#1}
+
+% Adjust subsection title formatting
+\titleformat{\subsection}{\normalfont}{\uline{\thesubsection}}{0em}{\uline{\hspace{1em}#1}}
+%
+% Adjust subsubsection title formatting
+\titleformat{\subsubsection}{\normalfont\itshape}{\thesubsection}{1em}{#1}
+
+
+
+%%%%%%%%%%%%%%%%
+% Chapters
+%%%%%%%%%%%%%%%%
+
+ \input{introduction}
+ \input{chapter_1}
+ %Add additional chapters here
+
+%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%
+
+\begin{singlespace}  % use single-line spacing for multi-line text within a single reference
+	\setlength\bibitemsep{\baselineskip}  %manually set separataion betwen items in bibliography to double space
+	\printbibliography[title={References}]
+\end{singlespace}
+
+\addcontentsline{toc}{chapter}{References}  %add References section to Table of Contents
+
+
+
+%%%%%%%%%%%%%%%%
+% Appendices
+%%%%%%%%%%%%%%%%
+
+% \input{appendix.tex}
+
+
+\end{document}
